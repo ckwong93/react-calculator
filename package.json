@@ -1,0 +1,11 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "We're going to build a simple calculator app. Our app takes in two numbers and shows the result of a simple operation on the numbers when you click the operation button. Take a look at the [live demo][live-demo] to see the app in action. Assume that only numbers will be entered.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

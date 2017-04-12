@@ -21814,6 +21814,7 @@
 	  function Calculator(props) {
 	    _classCallCheck(this, Calculator);
 	
+	    //your code here
 	    var _this = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this, props));
 	
 	    _this.state = {
@@ -21822,14 +21823,13 @@
 	      result: 0
 	    };
 	
-	    _this.changeNum1 = _this.changeNum1.bind(_this);
-	    _this.changeNum2 = _this.changeNum2.bind(_this);
+	    _this.input1 = _this.input1.bind(_this);
+	    _this.input2 = _this.input2.bind(_this);
 	    _this.add = _this.add.bind(_this);
+	    _this.subtract = _this.subtract.bind(_this);
 	    _this.multiply = _this.multiply.bind(_this);
 	    _this.divide = _this.divide.bind(_this);
 	    _this.clear = _this.clear.bind(_this);
-	
-	    //your code here
 	    return _this;
 	  }
 	
@@ -21837,37 +21837,44 @@
 	
 	
 	  _createClass(Calculator, [{
-	    key: "changeNum1",
-	    value: function changeNum1(e) {
-	      var number = parseInt(e.target.value);
-	      this.setState({ num1: number });
+	    key: "input1",
+	    value: function input1(e) {
+	      var input = parseInt(e.target.value);
+	      this.setState({ num1: input });
 	    }
 	  }, {
-	    key: "changeNum2",
-	    value: function changeNum2(e) {
-	      var number = parseInt(e.target.value);
-	      this.setState({ num2: number });
+	    key: "input2",
+	    value: function input2(e) {
+	      var input = parseInt(e.target.value);
+	      this.setState({ num2: input });
 	    }
 	  }, {
 	    key: "add",
 	    value: function add(e) {
 	      e.preventDefault();
-	      var result = this.state.num1 + this.state.num2;
-	      this.setState({ result: result });
+	      var addition = this.state.num1 + this.state.num2;
+	      this.setState({ result: addition });
+	    }
+	  }, {
+	    key: "subtract",
+	    value: function subtract(e) {
+	      e.preventDefault();
+	      var subtraction = this.state.num1 - this.state.num2;
+	      this.setState({ result: subtraction });
 	    }
 	  }, {
 	    key: "multiply",
 	    value: function multiply(e) {
 	      e.preventDefault();
-	      var result = this.state.num1 * this.state.num2;
-	      this.setState({ result: result });
+	      var multiply = this.state.num1 * this.state.num2;
+	      this.setState({ result: multiply });
 	    }
 	  }, {
 	    key: "divide",
 	    value: function divide(e) {
 	      e.preventDefault();
-	      var result = this.state.num1 / this.state.num2;
-	      this.setState({ result: result });
+	      var divide = this.state.num1 / this.state.num2;
+	      this.setState({ result: divide });
 	    }
 	  }, {
 	    key: "clear",
@@ -21886,13 +21893,20 @@
 	          null,
 	          this.state.result
 	        ),
-	        _react2.default.createElement("input", { onChange: this.changeNum1 }),
-	        _react2.default.createElement("input", { onChange: this.changeNum2 }),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement("input", { onChange: this.input1 }),
+	        _react2.default.createElement("input", { onChange: this.input2 }),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
 	          "button",
 	          { onClick: this.add },
-	          "Add me"
+	          "Add"
+	        ),
+	        _react2.default.createElement("br", null),
+	        _react2.default.createElement(
+	          "button",
+	          { onClick: this.subtract },
+	          "Subtract"
 	        ),
 	        _react2.default.createElement("br", null),
 	        _react2.default.createElement(
@@ -21910,8 +21924,9 @@
 	        _react2.default.createElement(
 	          "button",
 	          { onClick: this.clear },
-	          "clear"
-	        )
+	          "Clear"
+	        ),
+	        _react2.default.createElement("br", null)
 	      );
 	    }
 	  }]);
